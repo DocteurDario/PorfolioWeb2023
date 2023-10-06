@@ -207,38 +207,44 @@
     </style>
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- Agregamos el script de Email.js -->
 
+</head>
+<body>
+    <form id="formulario-contacto">
+        <!-- Campos del formulario -->
+        <button class="boton-elegante">Enviar</button>
+    </form>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- Agregamos el script de Email.js -->
     <script>
         // Configura Email.js con tus credenciales
         emailjs.init("service_o5hpowr"); // Reemplaza "tuUserId" con tu User ID de Email.js
 
-// Maneja el envío del formulario
+        // Maneja el envío del formulario
         document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
-        event.preventDefault();
+            event.preventDefault();
 
-    // Obtiene los datos del formulario
-        const correo = document.getElementById("correo").value;
-        const asunto = document.getElementById("asunto").value;
-        const mensaje = document.getElementById("mensaje").value;
+            // Obtiene los datos del formulario
+            const correo = document.getElementById("correo").value;
+            const asunto = document.getElementById("asunto").value;
+            const mensaje = document.getElementById("mensaje").value;
 
-    // Envía el correo a través de Email.js
-        emailjs.send("service_o5hpowr", "template_atxfz6l", {
-        from_email: correo,
-        to_email: "docteurdario@gmail.com", // Reemplaza con tu dirección de Gmail
-        subject: asunto,
-        message: mensaje
-        }).then(function(response) {
-        console.log("Correo enviado con éxito", response);
-        alert("Correo enviado con éxito");
-        // Puedes redirigir a una página de confirmación aquí si lo deseas
-        }, function(error) {
-        console.error("Error al enviar el correo", error);
-        alert("Error al enviar el correo");
-    });
-});
-
+            // Envía el correo a través de Email.js
+            emailjs.send("service_o5hpowr", "template_atxfz6l", {
+                from_email: correo,
+                to_email: "docteurdario@gmail.com", // Reemplaza con tu dirección de Gmail
+                subject: asunto,
+                message: mensaje
+            }).then(function(response) {
+                console.log("Correo enviado con éxito", response);
+                alert("Correo enviado con éxito");
+                // Puedes redirigir a una página de confirmación aquí si lo deseas
+            }, function(error) {
+                console.error("Error al enviar el correo", error);
+                alert("Error al enviar el correo");
+            });
+        });
     </script>
-</head>
-<body>
+
     <nav>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
@@ -327,7 +333,7 @@
 
         <div class="education">
             <h2>                
-                <img src="https://scontent.ffdo5-1.fna.fbcdn.net/v/t39.30808-6/318315107_688230292812603_2004600635255014109_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a2f6c7&_nc_eui2=AeG8RQ9oDOEyIcK9kHcdEckL9_JzPDGYSt_38nM8MZhK3yL_KcR-HVdDDN9nBhUuqwA&_nc_ohc=qJ5fgqeCpIgAX_bJmey&_nc_ht=scontent.ffdo5-1.fna&oh=00_AfA5DAQMDHY_1vgR5cgI5jmdmpOPTLeo3pRmGndOczo7lQ&oe=6518F783" class="icon">
+                <img src="https://scontent.fepa9-2.fna.fbcdn.net/v/t39.30808-6/318315107_688230292812603_2004600635255014109_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a2f6c7&_nc_eui2=AeG8RQ9oDOEyIcK9kHcdEckL9_JzPDGYSt_38nM8MZhK3yL_KcR-HVdDDN9nBhUuqwA&_nc_ohc=gFQGCdDFQbQAX9kS407&_nc_ht=scontent.fepa9-2.fna&oh=00_AfA7SWbmPfpkSRYsTTbzCp1OkUZa9pwj1L04LBMEVU0jlw&oe=6524D503" class="icon">
                 Escuela Secundaria Instituto Cristo Rey
             </h2>
             <p>• Bachillerato en Ciencias Sociales y Humanidades.</p>
@@ -416,8 +422,12 @@
                                         <textarea id="mensaje" name="mensaje" rows="6" style="width: 100%;"></textarea>
                                     </div>
                                     <div style="margin-top: 20px; text-align: center;">
-                                        <button class="boton-elegante">Enviar</button>
-                                    </div>
+                                    <form id="formulario-contacto">
+                                        
+                                            <button class="boton-elegante">Enviar</button>
+                                        
+                                    </form>
+                                </div>
                                 </form>
                             </div>
                         </div>
